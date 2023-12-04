@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo!</h1>
+    <p>Você pode encontrar as instruções aqui:</p>
+
+    <div>
+        @if (!string.IsNullOrEmpty(ViewBag.PDFDataUri))
+        {
+            <embed src="@ViewBag.PDFDataUri" type="application/pdf" width="100%" height="600px" />
+        }
+        else
+        {
+            <p>Erro ao carregar o PDF.</p>
+        }
+    </div>
+</div>
